@@ -62,13 +62,13 @@ struct GameView: View {
                 let yDist = abs(gesture.location.y - self.startPosition.y)
                 let isHorizontalSwipe = yDist > xDist
                 
-                if self.startPosition.y < gesture.location.y && isHorizontalSwipe {
+                if self.startPosition.y < gesture.location.y && isHorizontalSwipe && self.direction != .up {
                     self.direction = .down
-                } else if self.startPosition.y > gesture.location.y && isHorizontalSwipe {
+                } else if self.startPosition.y > gesture.location.y && isHorizontalSwipe && self.direction != .down {
                     self.direction = .up
-                } else if self.startPosition.x > gesture.location.x && !isHorizontalSwipe {
+                } else if self.startPosition.x > gesture.location.x && !isHorizontalSwipe && self.direction != .left {
                     self.direction = .right
-                } else if self.startPosition.x < gesture.location.x && !isHorizontalSwipe {
+                } else if self.startPosition.x < gesture.location.x && !isHorizontalSwipe && self.direction != .right {
                     self.direction = .left
                 }
                 self.isStarted.toggle()
