@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		C0B551AB24F5B83D006AD3BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B551AA24F5B83D006AD3BC /* AppDelegate.swift */; };
 		C0B551AD24F5B83D006AD3BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B551AC24F5B83D006AD3BC /* SceneDelegate.swift */; };
-		C0B551AF24F5B83D006AD3BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B551AE24F5B83D006AD3BC /* ContentView.swift */; };
 		C0B551B124F5B840006AD3BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B551B024F5B840006AD3BC /* Assets.xcassets */; };
 		C0B551B424F5B840006AD3BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B551B324F5B840006AD3BC /* Preview Assets.xcassets */; };
 		C0B551B724F5B840006AD3BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0B551B524F5B840006AD3BC /* LaunchScreen.storyboard */; };
+		C0B551BF24F5B8CB006AD3BC /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B551BE24F5B8CB006AD3BC /* Direction.swift */; };
+		C0B551C424F5B9DD006AD3BC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B551C324F5B9DD006AD3BC /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C0B551A724F5B83D006AD3BC /* SimpeSnakeSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpeSnakeSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B551AA24F5B83D006AD3BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0B551AC24F5B83D006AD3BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C0B551AE24F5B83D006AD3BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C0B551B024F5B840006AD3BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0B551B324F5B840006AD3BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C0B551B624F5B840006AD3BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C0B551B824F5B840006AD3BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0B551B824F5B840006AD3BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "SimpeSnakeSwiftUI/Support Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		C0B551BE24F5B8CB006AD3BC /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		C0B551C324F5B9DD006AD3BC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +58,11 @@
 		C0B551A924F5B83D006AD3BC /* SimpeSnakeSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				C0B551C124F5B970006AD3BC /* Views */,
+				C0B551C024F5B8CF006AD3BC /* Models */,
 				C0B551AA24F5B83D006AD3BC /* AppDelegate.swift */,
 				C0B551AC24F5B83D006AD3BC /* SceneDelegate.swift */,
-				C0B551AE24F5B83D006AD3BC /* ContentView.swift */,
-				C0B551B024F5B840006AD3BC /* Assets.xcassets */,
-				C0B551B524F5B840006AD3BC /* LaunchScreen.storyboard */,
-				C0B551B824F5B840006AD3BC /* Info.plist */,
+				C0B551C224F5B9A1006AD3BC /* Support Files */,
 				C0B551B224F5B840006AD3BC /* Preview Content */,
 			);
 			path = SimpeSnakeSwiftUI;
@@ -73,6 +74,32 @@
 				C0B551B324F5B840006AD3BC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C0B551C024F5B8CF006AD3BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0B551BE24F5B8CB006AD3BC /* Direction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0B551C124F5B970006AD3BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C0B551C324F5B9DD006AD3BC /* GameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0B551C224F5B9A1006AD3BC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0B551B524F5B840006AD3BC /* LaunchScreen.storyboard */,
+				C0B551B824F5B840006AD3BC /* Info.plist */,
+				C0B551B024F5B840006AD3BC /* Assets.xcassets */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +175,8 @@
 			files = (
 				C0B551AB24F5B83D006AD3BC /* AppDelegate.swift in Sources */,
 				C0B551AD24F5B83D006AD3BC /* SceneDelegate.swift in Sources */,
-				C0B551AF24F5B83D006AD3BC /* ContentView.swift in Sources */,
+				C0B551C424F5B9DD006AD3BC /* GameView.swift in Sources */,
+				C0B551BF24F5B8CB006AD3BC /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +316,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SimpeSnakeSwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 6YBL7YJSLW;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SimpeSnakeSwiftUI/Info.plist;
+				INFOPLIST_FILE = "SimpeSnakeSwiftUI/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +336,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SimpeSnakeSwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 6YBL7YJSLW;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SimpeSnakeSwiftUI/Info.plist;
+				INFOPLIST_FILE = "SimpeSnakeSwiftUI/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
