@@ -57,7 +57,7 @@ struct GameView: View {
                     self.isStarted.toggle()
                 }
             }
-            .onEnded {gesture in
+            .onEnded { gesture in
                 let xDist = abs(gesture.location.x - self.startPosition.x)
                 let yDist = abs(gesture.location.y - self.startPosition.y)
                 let isHorizontalSwipe = yDist > xDist
@@ -72,6 +72,15 @@ struct GameView: View {
                     self.direction = .left
                 }
                 self.isStarted.toggle()
+            }
+        )
+        .gesture(TapGesture()
+            .onEnded { gesture in
+                if self.gameOver {
+                    self.snakePositions = [self.newRandomPosition()]
+                    self.foodPosition = self.newRandomPosition()
+                    self.gameOver.toggle()
+                }
             }
         )
         .onReceive(timer) { _ in
