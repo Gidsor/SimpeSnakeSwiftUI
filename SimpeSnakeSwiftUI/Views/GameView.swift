@@ -27,7 +27,7 @@ struct GameView: View {
     
     var body: some View {
         ZStack {
-            Color.pink.opacity(0.3)
+            Color(UIColor.tertiarySystemBackground)
             ZStack {
                 ForEach(0..<snakePositions.count, id: \.self) { index in
                     Rectangle()
