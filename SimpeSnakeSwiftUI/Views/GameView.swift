@@ -85,7 +85,7 @@ struct GameView: View {
         )
         .onReceive(timer) { _ in
             if !self.gameOver {
-                self.changeDirection()
+                self.changeSnakePosition()
                 if self.snakePositions[0] == self.foodPosition {
                     self.snakePositions.append(self.snakePositions[0])
                     self.foodPosition = self.newRandomPosition()
@@ -105,11 +105,7 @@ struct GameView: View {
         return CGPoint(x: randomX, y: randomY)
     }
     
-    func changeDirection() {
-        let isGameOver = snakePositions[0].x < minX || snakePositions[0].x > maxX || snakePositions[0].y < minY || snakePositions[0].y > maxY
-        if isGameOver && !gameOver {
-            gameOver.toggle()
-        }
+    func changeSnakePosition() {
         
         var previousPosition = snakePositions[0]
         switch direction {
@@ -127,6 +123,15 @@ struct GameView: View {
             let current = snakePositions[index]
             snakePositions[index] = previousPosition
             previousPosition = current
+        }
+        
+        let isBoundsCollapse = snakePositions[0].x < minX || snakePositions[0].x > maxX || snakePositions[0].y < minY || snakePositions[0].y > maxY
+        let isSnakeCollapse = snakePositions.filter{ $0 == snakePositions[0] }.count > 1
+        
+        let isGameOver = isBoundsCollapse || isSnakeCollapse
+        
+        if isGameOver && !gameOver {
+            gameOver.toggle()
         }
     }
 }
